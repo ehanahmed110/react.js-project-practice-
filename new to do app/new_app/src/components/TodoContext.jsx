@@ -3,6 +3,8 @@ const InitialState={
     todos : [],
     editId : null
 }
+
+const API_URL="http://localhost:5000/todos"
 function TodoReducer(state,action){
    switch(action.type){
     case "ADD_TODO":
