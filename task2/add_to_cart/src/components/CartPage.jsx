@@ -5,7 +5,9 @@ import { CartContext } from "../context/CartContext";
 
 export default function CartPage() {
   const { state, dispatch } = useContext(CartContext);
-
+    const { product, loading, error } = state;
+     if (loading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
   return (
     
     <div className="p-6 md:flex">

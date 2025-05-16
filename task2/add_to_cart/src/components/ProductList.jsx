@@ -2,22 +2,25 @@ import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../context/CartContext';
 
 export function ProductList() {
-    const{dispatch} = useContext(CartContext);
-    const [product,setproduct] = useState([]);
-    useEffect(()=>{
-       GetData();
-    },[])
+    const{state,dispatch} = useContext(CartContext);
+    // const [product,setproduct] = useState([]);
+    // useEffect(()=>{
+    //    GetData();
+    // },[])
      
-    async function GetData(){
-        const url="https://fakestoreapi.com/products";
-        let response = await fetch(url);
-        response = await response.json();
-        setproduct(response);
-    }
-
+    // async function GetData(){
+    //     const url="https://fakestoreapi.com/products";
+    //     let response = await fetch(url);
+    //     response = await response.json();
+    //     setproduct(response);
+    // }
+     const { product, loading, error } = state;
+     if (loading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+
               {product.map((product) => (
             //   <ProductCard key={product.id} product={product} />
                     <div className="border rounded-lg p-4 shadow hover:shadow-lg transition" key={product.id}>
