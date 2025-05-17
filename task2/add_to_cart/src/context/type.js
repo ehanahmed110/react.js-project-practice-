@@ -1,0 +1,8 @@
+export const SET_LOADING_TRUE = "SET_LOADING_TRUE";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const FETCH_ERROR = "FETCH_ERROR";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const LESS_PRODUCT = "LESS_PRODUCT";
+export const UPDATE_QUANTITY = "UPDATE_QUANTITY";

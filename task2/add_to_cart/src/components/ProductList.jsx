@@ -1,27 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../context/CartContext';
+import { Spner } from './spner';
 
 export function ProductList() {
-    const{state,dispatch} = useContext(CartContext);
-    // const [product,setproduct] = useState([]);
-    // useEffect(()=>{
-    //    GetData();
-    // },[])
-     
-    // async function GetData(){
-    //     const url="https://fakestoreapi.com/products";
-    //     let response = await fetch(url);
-    //     response = await response.json();
-    //     setproduct(response);
-    // }
-     const { product, loading, error } = state;
-     if (loading) return <p>Loading...</p>;
-  if (error) return <p className="text-red-500">{error}</p>;
+    const{state,dispatch,GetData} = useContext(CartContext);
+   useEffect(()=>{
+    GetData();
+   },[])
+     if (state.loading) return <Spner/>
+  if (state.error) return <p className="text-red-500">{error}</p>;
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
 
-              {product.map((product) => (
+              {state.product.map((product) => (
             //   <ProductCard key={product.id} product={product} />
                     <div className="border rounded-lg p-4 shadow hover:shadow-lg transition" key={product.id}>
                        <img src={product.image} alt={product.title} className="h-40 mx-auto mb-4 object-contain" />
