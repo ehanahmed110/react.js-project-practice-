@@ -1,5 +1,4 @@
 {
- 
   "products": [
     {
       "id": "1",
@@ -34,11 +33,40 @@
   ],
   "users": [
     {
-      "id": "e359",
       "name": "Ehan",
       "last": "Ahmed",
-      "email": "ehan.ahmed@gmail.com"
+      "email": "ehan.ahmed@gmail.com",
+      "id": "e359"
+    },
+    {
+      "id": "6b18",
+      "name": "Ali ",
+      "last": "Hamza",
+      "email": "hamza@gmail.com"
+    },
+    {
+      "id": "647d",
+      "name": "Ameer ",
+      "last": "Hamza",
+      "email": "ameer@gmail.com"
+    },
+    {
+      "id": "69bf",
+      "name": "Bilal",
+      "last": "Mughal",
+      "email": "bilal@gmail.com"
+    },
+    {
+      "id": "d342",
+      "name": "ahmed",
+      "last": "ali",
+      "email": "ahmedali@gmail.com"
+    },
+    {
+      "name": "Ehan",
+      "last": "Ahmed",
+      "email": "ehan1156@gmail.com",
+      "id": "b409"
     }
   ]
-  
 }

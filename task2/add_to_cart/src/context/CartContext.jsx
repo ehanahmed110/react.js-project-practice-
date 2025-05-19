@@ -2,6 +2,7 @@ import React from "react";
 import { createContext, useReducer } from "react";
 import Reducer from "./ProductReducer";
 import { FETCH_ERROR, FETCH_SUCCESS, SET_LOADING_TRUE } from "./type";
+import axios from "axios";
 
 const initial = {
   cart: [],
@@ -17,9 +18,8 @@ export function CartProvider({ children }) {
   async function GetData() {
     try {
       dispatch({ type: SET_LOADING_TRUE });
-      const url = "https://fakestoreapi.com/products";
-      let response = await fetch(url);
-      let data = await response.json();
+      const response = await axios.get("https://fakestoreapi.com/products");
+      const data = response.data;
 
       dispatch({ type: FETCH_SUCCESS, payload: data });
     } catch (error) {

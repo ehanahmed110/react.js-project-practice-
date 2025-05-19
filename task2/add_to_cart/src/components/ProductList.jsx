@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../context/CartContext';
 import { Spner } from './spner';
-
+                                
 export function ProductList() {
     const{state,dispatch,GetData} = useContext(CartContext);
    useEffect(()=>{
