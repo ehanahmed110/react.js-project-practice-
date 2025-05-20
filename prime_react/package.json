@@ -1,5 +1,5 @@
 {
-  "name": "add_to_cart",
+  "name": "prime_react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,14 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.6",
-    "axios": "^1.9.0",
+    "@tailwindcss/vite": "^4.1.7",
+    "formik": "^2.4.6",
+    "primeflex": "^4.0.0",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.6.0",
-    "react-to-print": "^3.1.0",
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.7",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

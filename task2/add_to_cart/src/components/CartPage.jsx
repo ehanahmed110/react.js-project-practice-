@@ -1,11 +1,18 @@
 import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { useRef } from "react";
+import {useReactToPrint} from 'react-to-print';
 // import { Spner } from "./spner";
 
 export default function CartPage() {
   const { state, dispatch } = useContext(CartContext);
-  //  if (state.loading) return <Spner/>
+  //for print--------------
+  const componentRef = useRef();
+  const HandlePrint = useReactToPrint({
+    contentRef : componentRef
+  }) 
+   //  if (state.loading) return <Spner/>
   if (state.error) return <p className="text-red-500">{error}</p>;
   return (
     <div className="p-6 md:flex">
@@ -87,7 +94,10 @@ export default function CartPage() {
           </div>
         )}
       </div>
-      <div className="bg-[#000000d5] md:w-[30%] text-white p-4">
+
+      <div className="bg-[#000000d5] md:w-[30%] text-white p-4" >
+              <button onClick={HandlePrint}>Print</button>
+        <div ref={componentRef} className="bg-[#000000d5] text-white rounded-lg p-2">
         <h2 className="text-xl font-bold mb-4 text-center shadow">
           Cart Summary
         </h2>
@@ -109,6 +119,8 @@ export default function CartPage() {
             .toFixed(2)}
         </div>
       </div>
+      </div>
+
     </div>
   );
 }

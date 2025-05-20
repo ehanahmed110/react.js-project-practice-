@@ -6,7 +6,7 @@ import { UserContext } from '../context/userContext';
 import { FETCH_USER_SUCCESS, FETCH_USERS_ERROR, SET_LOADING,SET_SEARCH_TERM } from '../js-folder/type';
 import Spinner from './spinner';
 import {useReactToPrint} from 'react-to-print';
-import {contentRef} from 'react-to-print';
+import { contentRef } from 'react-to-print';
 
 
 export default function UserList() {
@@ -83,14 +83,8 @@ const url = "http://localhost:3000/users";
         />
       </div>
       {/* ---------------print button---------------- */}
-      <div>
-        {/* <ReactToPrint
-  trigger={() => <button>Print</button>}
-  content={() => componentRef.current}
-  documentTitle="new document"
-  pageStyle="print"
-/> */}
-  <button onClick={HandlePrint}>Print</button>
+      <div className='flex justify-end items-end px-50'>
+  <button className=' border bg-black text-white rounded-lg px-4 py-2 cursor-pointer' onClick={HandlePrint}>Print</button>
       </div>
 
 <div className="max-w-4xl mx-auto" ref={componentRef}>
