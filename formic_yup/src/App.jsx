@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-       {/* <MyForm/> */}
-       <Formic/>
+       <MyForm/>
+       {/* <Formic/> */}
     </>
   )
 }
