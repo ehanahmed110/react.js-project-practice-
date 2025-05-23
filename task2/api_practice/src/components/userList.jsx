@@ -6,6 +6,7 @@ import { UserContext } from '../context/userContext';
 import { FETCH_USER_SUCCESS, FETCH_USERS_ERROR, SET_LOADING,SET_SEARCH_TERM } from '../js-folder/type';
 import Spinner from './spinner';
 import {useReactToPrint} from 'react-to-print';
+import { InputText } from 'primereact/inputtext';
 import { contentRef } from 'react-to-print';
 
 
@@ -69,9 +70,12 @@ const url = "http://localhost:3000/users";
 
     return (
         <>
-     <h1 className="text-2xl font-semibold mb-6 text-center text-blue-600">User List</h1>
+     <h1 className="text-2xl font-semibold mb-6 text-center text-blue-600 mt-4">User Table (Sorting + Filtering)</h1>
        {/* ✅ Search input */}
+      
       <div className="max-w-4xl mx-auto mb-4">
+        <span className="p-input-icon-left mb-3">
+           <i className="pi pi-search" />
         <input
           type="text"
           placeholder="Search by name, last name, or email"
@@ -80,7 +84,7 @@ const url = "http://localhost:3000/users";
             dispatch({ type: SET_SEARCH_TERM, payload: e.target.value })
           }
           className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+        /></span>
       </div>
       {/* ---------------print button---------------- */}
       <div className='flex justify-end items-end px-50'>
